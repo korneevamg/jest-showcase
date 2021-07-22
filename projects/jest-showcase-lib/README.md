@@ -17,7 +17,7 @@ After building your library with `ng build jest-showcase-lib`, go to the dist fo
 
 ## Running unit tests
 
-Run `ng test jest-showcase-lib` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test jest-showcase-lib` to execute the unit tests via [Jest](https://jestjs.io).
 
 ## Further help
 
