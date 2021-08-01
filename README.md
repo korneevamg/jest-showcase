@@ -56,3 +56,4 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 - [Testing Angular](https://testing-angular.com)
 - [Please, don't mock me!](https://www.youtube.com/watch?v=Af4M8GMoxi4)
 - [Mocking Functions and Modules with Jest](https://pawelgrzybek.com/mocking-functions-and-modules-with-jest/)
+- [Angular Guidelines and Best Practices](https://infinum.com/handbook/books/frontend/angular/angular-guidelines-and-best-practices/testing)
