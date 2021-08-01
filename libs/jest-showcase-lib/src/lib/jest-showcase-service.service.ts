@@ -21,18 +21,18 @@ export interface AgeResult {
 export class JestShowcaseLibService {
   public constructor(private http: HttpClient) {}
 
-  public async fetchAge(name: string) {
-    const nameResult = await this.getName(name);
-    return this.http
-      .get<AgeResult>(`https://api.agify.io?name=${nameResult}`)
-      .toPromise();
-  }
-
   // A simplified version of the call to focus on testig http requests
   public sendAgeRequest(name: string) {
     return this.http
       .get<AgeResult>(`https://api.agify.io?name=${name}`)
       .pipe(catchError(() => of(defaultAge)));
+  }
+
+  public async fetchAge(name: string) {
+    const nameResult = await this.getName(name);
+    return this.http
+      .get<AgeResult>(`https://api.agify.io?name=${nameResult}`)
+      .toPromise();
   }
 
   private async getName(name: string) {

@@ -1,7 +1,10 @@
-import { AppService } from './app.service';
 import { Component } from '@angular/core';
 import { JestShowcaseLibService } from '@jest-showcase/jest-showcase-lib';
 
+/**
+ * @description AppComponent is an autonomous component for mocks showcase.
+ * Please note that the implementation does not follow best practices, it merely provides structure for the test.
+ */
 @Component({
   selector: 'jest-showcase-root',
   templateUrl: './app.component.html',
@@ -12,10 +15,6 @@ export class AppComponent {
   public constructor(private jestShowcaseLibService: JestShowcaseLibService) {}
   public goSomewhereElse() {
     window.location.href = 'https://jestjs.io';
-  }
-
-  public checkOverride() {
-    return this.jestShowcaseLibService.isAlwaysTruthy();
   }
 
   public increasePrice() {

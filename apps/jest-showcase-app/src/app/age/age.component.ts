@@ -10,6 +10,11 @@ import { Component } from '@angular/core';
   templateUrl: './age.component.html',
   styleUrls: ['./age.component.scss'],
 })
+
+/**
+ * @description AgeComponent is an autonomous component for mocks showcase.
+ * Please note that the implementation does not follow best practices, it merely provides structure for the test.
+ */
 export class AgeComponent {
   public age: number | null = null;
   public name = '';
@@ -23,6 +28,7 @@ export class AgeComponent {
   }
 
   private extractAgeInformation(ageInfo: AgeResult) {
+    // You would probably do more stuff here in a real world scenario
     this.age = ageInfo.age;
   }
 }

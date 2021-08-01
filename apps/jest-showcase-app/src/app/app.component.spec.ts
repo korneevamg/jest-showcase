@@ -7,14 +7,12 @@ import { MockComponents, MockProvider } from 'ng-mocks';
 
 import { AgeComponent } from './age/age.component';
 import { AppComponent } from './app.component';
-import { AppService } from './app.service';
 import { PriceComponent } from './price/price.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
-  let mockedJestShowcaseLibService: JestShowcaseLibService;
   beforeEach(async () => {
     jest.resetAllMocks();
     await TestBed.configureTestingModule({
@@ -22,10 +20,10 @@ describe('AppComponent', () => {
       providers: [MockProvider(JestShowcaseLibService)],
       declarations: [
         AppComponent,
+        // Mock all the other components away
         MockComponents(PriceComponent, AgeComponent),
       ],
     }).compileComponents();
-    mockedJestShowcaseLibService = TestBed.inject(JestShowcaseLibService);
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
   });
@@ -51,10 +49,9 @@ describe('AppComponent', () => {
     }; */
     // eslint-disable-next-line no-global-assign
     window = Object.create(window);
-    const url = 'http://dummy.com';
     Object.defineProperty(window, 'location', {
       value: {
-        href: url,
+        href: 'http://dummy.com',
       },
     });
     component.goSomewhereElse();
@@ -62,24 +59,8 @@ describe('AppComponent', () => {
     // Source: https://stackoverflow.com/questions/54021037/how-to-mock-window-location-href-with-jest-vuejs
   });
 
-  describe('checkOverride', () => {
-    it('should be overwritten', () => {
-      jest
-        .spyOn(mockedJestShowcaseLibService, 'isAlwaysTruthy')
-        .mockImplementation(() => false);
-      expect(component.checkOverride()).toEqual(false);
-    });
-
-    it('should be not overwritten', () => {
-      jest
-        .spyOn(mockedJestShowcaseLibService, 'isAlwaysTruthy')
-        .mockReturnValue(false);
-      expect(component.checkOverride()).toEqual(false);
-    });
-  });
-
   describe('increasePrice', () => {
-    test('should be not overwritten', () => {
+    test('should be called uopon click on the button', () => {
       const increasePriceSpy = jest.spyOn(component, 'increasePrice');
       const button =
         fixture.debugElement.nativeElement.querySelectorAll('button')[1];
