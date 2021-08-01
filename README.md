@@ -55,3 +55,4 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 - [Debuging Jest Tests in VS Code](https://juristr.com/blog/2020/05/vscode-debug-jest/)
 - [Testing Angular](https://testing-angular.com)
 - [Please, don't mock me!](https://www.youtube.com/watch?v=Af4M8GMoxi4)
+- [Mocking Functions and Modules with Jest](https://pawelgrzybek.com/mocking-functions-and-modules-with-jest/)
