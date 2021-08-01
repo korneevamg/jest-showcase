@@ -1,4 +1,4 @@
-# JestShowcase
+# Jest Showcase
 
 This project is an [Angular](https://angular.io) monorepo created with [Nx](https://nx.dev) to showcase some [Jest](https://jestjs.io) capabilities.
 
