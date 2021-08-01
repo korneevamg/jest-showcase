@@ -52,8 +52,9 @@ Run `nx affected:test` to execute the unit tests affected by a change.
 
 ## Further reading
 - [Angular Testing Best Practices](https://angular.io/guide/testing)
-- [Debuging Jest Tests in VS Code](https://juristr.com/blog/2020/05/vscode-debug-jest/)
+- [Debugging Jest Tests in VS Code](https://juristr.com/blog/2020/05/vscode-debug-jest/)
 - [Testing Angular](https://testing-angular.com)
 - [Please, don't mock me!](https://www.youtube.com/watch?v=Af4M8GMoxi4)
 - [Mocking Functions and Modules with Jest](https://pawelgrzybek.com/mocking-functions-and-modules-with-jest/)
 - [Angular Guidelines and Best Practices](https://infinum.com/handbook/books/frontend/angular/angular-guidelines-and-best-practices/testing)
+- [Test Doubles: Fakes, Mocks and Stubs](https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da)
