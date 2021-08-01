@@ -1,98 +1,60 @@
-# JestShowcase
+# Jest Showcase
 
-This project was generated using [Nx](https://nx.dev).
+This project is an [Angular](https://angular.io) monorepo created with [Nx](https://nx.dev) to showcase some [Jest](https://jestjs.io) capabilities.
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+## Monorepo description & limitations
 
-🔎 **Smart, Extensible Build Framework**
+This monorepo includes an app **Jest Showcase App** and a lib **Jest Showcase Lib**. Both do not follow any business requirements and merely include a loose collection of methods and functions that represent typical caveats during unit testing. Neither architecture nor implementation represent best practices in their area, so please consider the code accordingly. It merely serves as basis for tests. The examples do not give 100% overview over **all** capabilities of Jest but concentrate on some typical use cases such as:
+- manipulating window.location.href
+- testing async nested methods
+- testing components with input properties
+- testing clicks
+- testing http requests
+- mocking pure functions
+- mocking overloaded methods
 
-## Quick Start & Documentation
+It also covers some practical aspects:
+- how to skip some tests
+- what is the difference between 'test' and 'it'
+- how to test private methods (only if you **reeeeally** need to)
+- differences between toBe() and toEqual(), toBeTrue() and toBeTruthy()
 
-[Nx Documentation](https://nx.dev/angular)
+The main value of this repo lies in the comments. 
 
-[10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
+## Mocking & testing libs (in addition to Jest)
 
-[Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
-
-## Adding capabilities to your workspace
-
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are our core plugins:
-
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/community) you could add.
-
-## Generate an application
-
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are shareable across libraries and applications. They can be imported from `@jest-showcase/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [ngMocks](https://ng-mocks.sudo.eu)
+- [Testing Library](https://github.com/testing-library/angular-testing-library)
+- [Jest Runner - VS Code extention](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner)
 
 ## Running unit tests
 
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+Run `ng test jest-showcase-app` to execute the unit tests of the app.
+
+Run `ng test jest-showcase-lib` to execute the unit tests of the lib.
+
+Run `npm test -- SomeTestFileToRun` to execute the unit tests of a particular file.
+
+Run `nx test --watch` to watch files for changes and rerun tests related to changed files.
+
+  Watch Usage:
+
+    - Press a to run all tests.
+    - Press f to run only failed tests.
+    - Press p to filter by a filename regex pattern.
+    - Press t to filter by a test name regex pattern.
+    - Press q to quit watch mode.
+    - Press Enter to trigger a test run.
+
+Run `npx jest --coverage` to so execute the unit tests and to see the respective coverage.
 
 Run `nx affected:test` to execute the unit tests affected by a change.
 
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+## Further reading
+- [Angular Testing Best Practices](https://angular.io/guide/testing)
+- [Debugging Jest Tests in VS Code](https://juristr.com/blog/2020/05/vscode-debug-jest/)
+- [Testing Angular](https://testing-angular.com)
+- [Please, don't mock me!](https://www.youtube.com/watch?v=Af4M8GMoxi4)
+- [Mocking Functions and Modules with Jest](https://pawelgrzybek.com/mocking-functions-and-modules-with-jest/)
+- [Angular Guidelines and Best Practices](https://infinum.com/handbook/books/frontend/angular/angular-guidelines-and-best-practices/testing)
+- [Test Doubles: Fakes, Mocks and Stubs](https://blog.pragmatists.com/test-doubles-fakes-mocks-and-stubs-1a7491dfa3da)
