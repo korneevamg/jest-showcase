@@ -1,0 +1,9 @@
+<p class="component-name">Age Component</p>
+<input
+  id="name"
+  required
+  [(ngModel)]="name"
+  placeholder="Pease enter your name"
+/>
+<button (click)="getAge()">Get your age</button>
+<p *ngIf="age !== null">Your age based on your first name: {{ age }}</p>

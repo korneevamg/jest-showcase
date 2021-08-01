@@ -119,6 +119,31 @@
           }
         }
       }
+    },
+    "jest-showcase-lib": {
+      "projectType": "library",
+      "root": "libs/jest-showcase-lib",
+      "sourceRoot": "libs/jest-showcase-lib/src",
+      "prefix": "jest-showcase",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/jest-showcase-lib"],
+          "options": {
+            "jestConfig": "libs/jest-showcase-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/jest-showcase-lib/src/**/*.ts",
+              "libs/jest-showcase-lib/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
